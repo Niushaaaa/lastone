@@ -26,5 +26,25 @@ if (isset($_POST['submit2'])) {
     $ins_sql_pre->execute();
 }
 ?>
+<div id="wrapper">
+    <div id="row1">
+        <div id="row1_col1">
+            <form action="" method="post">
+                <fieldset>
+                    <legend>class</legend>
+                    <label>id</label>
+                    <input type="text" name="txt_id"/><br/>
+                    <label>class</label>
+                    <input type="text" name="txt_class"/>
+                    <input type="submit" name="submit" value="insert-class"/><br/>
+                </fieldset>
+            </form>
+            <table border="1">
+                <tr>
+                    <td>id</td>
+                    <td>class</td>
+                    <td>delete</td>
+                    <td>edit</td>
+                </tr>
 </body>
 </html>
