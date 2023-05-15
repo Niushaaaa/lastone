@@ -46,5 +46,20 @@ if (isset($_POST['submit2'])) {
                     <td>delete</td>
                     <td>edit</td>
                 </tr>
+                <?php
+                include "connection.php";
+                $query="SELECT * FROM class";
+                $result=$db->prepare($query);
+                $result->execute();
+                while ($row=$result->fetch(PDO::FETCH_ASSOC)){
+                    echo "
+                    <tr>
+                    <td>".$row['id']."</td>
+                         <td>".$row['class']."</td>
+                         
+                    ";
+                }
+                
+                ?>
 </body>
 </html>
