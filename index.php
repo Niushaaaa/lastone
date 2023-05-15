@@ -128,7 +128,16 @@ if (isset($_POST['submit2'])) {
             }
             ?>
         </select>
+        <input type="submit" name="sub" value="select">
     </form>
+    <table>
+        <tr>
+            <td>name</td>
+            <td>family</td>
+            <td>ave</td>
+        </tr>
+        <?php
+    </table>
 </div>
 
 </body>
