@@ -56,6 +56,7 @@ if (isset($_POST['submit2'])) {
                     <tr>
                     <td>".$row['id']."</td>
                          <td>".$row['class']."</td>
+                         <td><a href='delete.php?id=".$row['id']."&&page=1'>delete</a></td>
                          
                     ";
                 }
