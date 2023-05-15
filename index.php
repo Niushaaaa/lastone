@@ -22,7 +22,7 @@ if (isset($_POST['submit2'])) {
     $family = $_POST['family'];
     $ave = $_POST['ave'];
     $ins_sql = "INSERT INTO student(id,class,name,family,ave) VALUES ('$id','$class','$name','$family','$ave')";
-    $ins_sql_pre=$db->prepare($ins_sql);
+    $ins_sql_pre = $db->prepare($ins_sql);
     $ins_sql_pre->execute();
 }
 ?>
@@ -48,16 +48,16 @@ if (isset($_POST['submit2'])) {
                 </tr>
                 <?php
                 include "connection.php";
-                $query="SELECT * FROM class";
-                $result=$db->prepare($query);
+                $query = "SELECT * FROM class";
+                $result = $db->prepare($query);
                 $result->execute();
-                while ($row=$result->fetch(PDO::FETCH_ASSOC)){
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     echo "
                     <tr>
-                    <td>".$row['id']."</td>
-                         <td>".$row['class']."</td>
-                         <td><a href='delete.php?id=".$row['id']."&&page=1'>delete</a></td>
-                         <td><a href='edit.php?id=".$row['id']."&&page=1'>edit</a></td>
+                    <td>" . $row['id'] . "</td>
+                         <td>" . $row['class'] . "</td>
+                         <td><a href='delete.php?id=" . $row['id'] . "&&page=1'>delete</a></td>
+                         <td><a href='edit.php?id=" . $row['id'] . "&&page=1'>edit</a></td>
                          </tr>
                     ";
                 }
@@ -91,6 +91,29 @@ if (isset($_POST['submit2'])) {
                     <td>delete</td>
                     <td>edit</td>
                 </tr>
+<?php
+include "connection.php";
+$query = "SELECT * FROM student";
+$result = $db->prepare($query);
+$result->execute();
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "
+                     <tr>
+                         <td>" . $row['id'] . "</td>
+                         <td>" . $row['class'] . "</td>
+                         <td>" . $row['name'] . "</td>
+                         <td>" . $row['family'] . "</td>
+                         <td>" . $row['ave'] . "</td>
+                         <td><a href='delete.php?id=" . $row['id'] . "&&page=2'></a>delete</td>
+                         <td><a href='edit.php?id=" . $row['id'] . " &&page=2'></a>edit</td>
+                  </tr>
+                    ";
+                }
+                ?>
+            </table>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
