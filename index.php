@@ -91,13 +91,13 @@ if (isset($_POST['submit2'])) {
                     <td>delete</td>
                     <td>edit</td>
                 </tr>
-<?php
-include "connection.php";
-$query = "SELECT * FROM student";
-$result = $db->prepare($query);
-$result->execute();
-while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    echo "
+                <?php
+                include "connection.php";
+                $query = "SELECT * FROM student";
+                $result = $db->prepare($query);
+                $result->execute();
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    echo "
                      <tr>
                          <td>" . $row['id'] . "</td>
                          <td>" . $row['class'] . "</td>
@@ -113,6 +113,22 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             </table>
         </div>
     </div>
+</div>
+<div id="show_list">
+    <form method="post">
+        <label>class</label>
+        <select name="select1" id="select1">
+            <?php
+            include "connection.php";
+            $sql_option = "SELECT * FROM class";
+            $sql_option_pre = $db->prepare($sql_option);
+            $sql_option_pre->execute();
+            while ($rows = $sql_option_pre->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . $rows['id'] . "'>" . $rows['class'] . "</option>";
+            }
+            ?>
+        </select>
+    </form>
 </div>
 
 </body>
