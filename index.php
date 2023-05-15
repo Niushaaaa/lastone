@@ -62,5 +62,35 @@ if (isset($_POST['submit2'])) {
                     ";
                 }
                 ?>
+            </table>
+        </div>
+        <div id="row1_col2">
+            <form action="" method="post">
+                <fieldset>
+                    <legend>student</legend>
+                    <label>id</label>
+                    <input type="text" name="id"><br/>
+                    <label>class</label>
+                    <input type="text" name="class"><br/>
+                    <label>name</label>
+                    <input type="text" name="name"><br/>
+                    <label>family</label>
+                    <input type="text" name="family"><br/>
+                    <label>ave</label>
+                    <input type="number" name="ave"><br/>
+                    <input type="submit" name="submit2" value="insert-student"/>
+                </fieldset>
+            </form>
+            <table border="1">
+                <tr>
+                    <td>id</td>
+                    <td>class</td>
+                    <td>name</td>
+                    <td>family</td>
+                    <td>id</td>
+                    <td>delete</td>
+                    <td>edit</td>
+                </tr>
+
 </body>
 </html>
